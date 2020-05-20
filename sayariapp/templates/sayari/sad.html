@@ -1,0 +1,133 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <style>
+  .closebtn {
+  position: absolute;
+color:white;
+margin-top:auto;
+
+position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+
+
+h6
+{
+font-family: Sofia;
+color:white;
+}
+
+  </style>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body style="
+background:crimson;" >
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+        </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarid" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarid">
+    <div class="navbar-nav">
+
+ <li class="nav-item "><a  href="/sayariapp/sad/" class="btn btn-light nav-link text-dark ml-1">sad</a></li>
+        <li class="nav-item "><a href="/sayariapp/romantic/" class="btn btn-light nav-link text-dark ml-1">Romantic</a></li>
+          <li class="nav-item "><a  class="btn btn-light nav-link text-dark ml-1">Happy</a></li>
+          <li class="nav-item "><a class="btn btn-light nav-link text-dark ml-1">sucess</a></li>
+    </div>
+  </div>
+</nav>
+{% load static %}
+<div class="container" >
+     <div class="row">
+
+<div class="card" style="display:none;background:black;margin-top:10px;margin-left:;margin-bottom:1%;">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+<h1 style="">Adarsh Club</h1>
+ <img  id="expandedImg" src="{% static 'store/by.png' %}" style="height:500px;width:580px;background-size:cover" class="img-fluid col-xs-3 img-responsive" >
+  <div id="imgtext" style="color:white;">Ummesh Photography</div>
+
+</div>
+
+
+
+
+{% for i in sayari %}
+{% load static %}
+{% if i.category == "sad" %}
+<div>
+ <div class=" col-lg-3 col-sm-4 col-md-3 float-left" style="">
+     <a href="#" style="text-decoration:none">  <div class="element" style="" >
+            <img src="/media/{{i.uploadImg}}"  style="height:290px; width:290px; margin-top:4%"   onclick="myFunction(this)" alt="Adarsh Club" class="img-thumbnail">
+            <h6 align="center" class="" style="text-decoration:none"> {{i.name}}</h6>
+
+                   </div>
+     </a>
+    </div>
+
+
+{% endif %}
+
+  </div>
+</div>
+{% endfor %}
+</div>
+
+
+
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript">
+
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+
+
+}
+
+
+
+
+
+    </script>
+<div style="height:200px;width:100px;color:red;margin-top:80%">
+
+<div class="container">
+    <ul class="pagination mt-5
+" style="margin-left:600px;">
+
+        <li class="page-item"><a href="/store/" class="page-link  text-dark">1</a> </li>
+
+        <li class="page-item bg-primary"  style="border:2px solid blue;"><a href="#" class="page-link text-dark active">2</a> </li>
+         <li class="page-item"><a href="/store/img3" class="page-link  text-dark">3</a> </li>
+    </ul>
+
+</div>
+</div>
+</body>
+
+
+
+
+
+</html>

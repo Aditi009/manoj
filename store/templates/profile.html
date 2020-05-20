@@ -1,0 +1,105 @@
+
+{% extends 'basic.html' %}
+{% block css %}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#front
+{
+box-shadow:10px 10px 10px black;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: crimson;
+  color: white;
+  transform: rotateY(180deg);
+}
+{% endblock %}
+{% block body %}
+<div class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-5">
+            <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+        {% load static %}
+      <img src="{% static 'store/aditi.jpg' %}" alt="Avatar" id="front" class="img-thumbnail rounded "style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Seraj Alam</h1>
+      <p>Architect & Engineer</p>
+      <p>web designer</p>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-5">
+             <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+        {% load static %}
+      <img src="{% static 'store/aditi.jpg' %}" alt="Avatar" class=" img-thumbnail rounded "style="width:300px;height:300px;box-shadow:10px 10px 10px black;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Aditi Gupta</h1>
+      <p>Architect & Engineer</p>
+      <p>web designer</p>
+    </div>
+  </div>
+</div>
+        </div>
+
+
+          <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 mt-5 ">
+              <div style="">
+            <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="{% static 'adi2.jpg' %}" class="img-thumbnail rounded " alt="Avatar" style="width:300px;height:300px;box-shadow:10px 10px 10px black;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Adarsh Gupta</h1>
+      <p>Architect & Mba</p>
+      <p>Management $ Marketing</p>
+    </div>
+  </div>
+</div>
+          </div>
+
+</div>
+
+</div>
+{% endblock %}

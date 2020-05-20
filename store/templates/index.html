@@ -1,0 +1,269 @@
+{% extends 'basic.html' %}
+{% block head %}
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
+{% endblock %}
+{% block css %}
+html {
+  scroll-behavior: smooth;
+}
+
+.side
+{
+height:560px;
+
+
+}
+
+.closebtn {
+  position: absolute;
+color:white;
+margin-top:auto;
+
+position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+section
+{
+height:500px;
+width:100%;
+
+}
+p
+{
+color:black;
+font-family: Sofia;
+}
+
+
+h1 {
+
+color:white;
+font-family: Sofia;
+}
+
+
+h6
+{
+height:10px;
+}
+
+
+
+#expen
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<div class="container-fluid">
+
+
+
+
+<div class ="row">
+    <div class=" offset-0 mt-1 d-none d-xl-block d-lg-block ">
+    <div class="list-group bg-primary">
+
+
+
+  <button type="button" class="list-group-item list-group-item-actiont text-light " style="background-color:crimson;">Mor</button>
+  <button type="button" class="list-group-item  bg-dark list-group-item-action text-light ">Por</button>
+  <button type="button" class="list-group-item bg-dark list-group-item-action text-light " >Ve</button>
+         <button type="button" class="list-group-item bg-dark list-group-item-action text-light " >Ve</button>
+         <button type="button" class="list-group-item bg-dark list-group-item-action text-light " >Ve</button>
+</div>
+    </div>
+
+    <div class="col-md">
+        <marquee scrollamount="39" behavior="slide">
+
+<div class="card  mt-1 offset-2" style="height:520px;width:cover; background-image:url('{% static 'store/bg5.jpg' %}');background-size:cover;">
+    <center>
+  <span onclick="this.parentElement.style.display='none' "class="closebtn">&times;</span>
+<h1 style="">Adarsh Club</h1>
+    <a href="#" download>
+ <img  id="expandedImg" src="{% static 'store/by.png' %}" style="height:520px;width:cover;background-size:cover" class="img-fluid col-xs-3 img-responsive" >
+        </a>
+  <div id="imgtext" style="display:none ">ADARSH CLUB</div>
+        </center>
+
+</div>
+
+
+            </marquee>
+</div>
+   <!-- -->
+ <div class="col-md-3 d-none d-xl-block d-lg-block mt-1 "div="side">
+        <marquee scrollamount="30" behavior="slide" direction="down">
+       <div class="side pull-right" style="background-image: url('{% static 'store/side2.jpeg' %}');background-repeat:no-repeat;background-size:cover;">
+
+
+               <br><h1 class="col-md-12 offset-2" style="">Adarsh Club</h1>
+       <img src="{% static 'store/Photo_1588091688834 (1).png' %}" style="height:290px;"></div>
+</marquee>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="row">
+
+{% for i in imageinformation %}
+
+
+
+    <div class=" col-lg-3 col-sm-4 col-md-3 float-left" style="">
+     <a href="#">  <div class="element" style="" >
+            <img src="/media/{{i.uploadImg}}"  style="height:200px; width:250px; margin-top:4%"   onclick="myFunction(this)" alt="Adarsh Club" class="img-thumbnail">
+            <h6 align="center" class="text-white"> {{i.name}}</h6>
+            <p align="center" class="text-white"> {{i.description}}</p>
+                   </div>
+     </a>
+    </div>
+
+
+
+
+
+
+
+
+{% endfor %}
+</div>
+<nav aria-label="Page navigation example" class="mt-5">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item" style="border:2px solid blue"><a class="page-link" aria-active="true" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="/store/img2">2</a></li>
+    <li class="page-item"><a class="page-link" href="/store/img3">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+<div class="row img-responsive img-fluid " style="background-image: url('{% static 'store/down.jpg' %}');background-repeat:no-repeat;opacity: 1;background-size:cover;margin-top:10%" >
+   <section>
+
+
+    </section>
+</div>
+<div class="row">
+<div class="mt-2 ">
+
+<div class="card ml-5 mt-5 float-left" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4 col-sm-4">
+      <img src="{% static 'store/photo1.jpeg' %}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8 col-sm-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card ml-5 mt-5 float-left" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4 col-sm-4">
+      <img src="{% static 'store/photo2.jpeg' %}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8 col-sm-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+    <div class="mt-2 ">
+
+<div class="card  ml-5 mt-5 float-left" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4 col-sm-4">
+      <img src="{% static 'store/photo3.jpeg' %}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8 col-sm-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card  ml-5 mt-5 float-left" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4 col-sm-4">
+      <img src="{% static 'store/photo4.jpeg' %}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8 col-sm-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+
+</div>
+    </div>
+<div class="container-fluid mt-5">
+<div class="row" style="background:#CD5C5C;height:400px;">
+  <div class="col-md-4 col-sm-4 col-es-4">
+       <h1 style="float:left">Ummu PhotoGraphy</h1>
+  </div>
+
+    <img  class="col-md-4 col-lg-4 col-sm-4 col-es-4" src="{% static 'store/photo5.jpeg' %} " style="height:500px;">
+
+</div>
+</div>
+
+{% load static %}
+
+
+
+
+
+
+
+ <script type="text/javascript">
+
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+
+
+}
+
+
+
+
+
+    </script>
+
+
+{% endblock %}
+{% block paging %}
+{% endblock %}
