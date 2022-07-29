@@ -34,7 +34,7 @@ lazy-object-proxy==1.4.2
 MarkupSafe==1.1.1
 matplotlib==3.1.1
 mccabe==0.6.1
-mistune==0.8.4
+mistune==2.0.3
 more-itertools==8.1.0
 MouseInfo==0.1.2
 mysql-connector-python==8.0.16
